@@ -1,4 +1,5 @@
 using CSharpApi.Data;
+using CSharpApi.Services.CharacterService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,6 +39,10 @@ namespace CSharpApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CSharpApi", Version = "v1" });
             });
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<ICharacterService, CharacterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

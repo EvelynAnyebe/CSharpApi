@@ -22,7 +22,7 @@ namespace CSharpApi.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet("GetUsers")]
+        [HttpGet]
         public IActionResult Get()
         {
             try
@@ -42,7 +42,7 @@ namespace CSharpApi.Controllers
             
         }
 
-        [HttpPost("CreateUser")]
+        [HttpPost]
         public IActionResult Create([FromBody] CustomerRequest customerRequest)
         {
             try
@@ -67,7 +67,7 @@ namespace CSharpApi.Controllers
 
         }
 
-        [HttpPut("UpdateUser")]
+        [HttpPut]
         public IActionResult Update([FromBody] CustomerRequest customerRequest)
         {
             try
@@ -98,7 +98,7 @@ namespace CSharpApi.Controllers
         }
 
 
-        [HttpDelete("DeleteUser/{Id}")]
+        [HttpDelete("{Id}")]
         public IActionResult Delete([FromRoute] int Id)
         {
             try
